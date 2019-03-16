@@ -23,13 +23,13 @@ use-site-title: true
     </p>
 
     <div class="post-entry-container">
-      {% if post.image %}
+      <!--{% if post.image %}-->
       <div class="post-image">
         <a href="{{ post.url | prepend: site.baseurl }}">
           <span style="background-image:url({{ site.nasurl }}/{{ post.image }})"></span>
         </a>
       </div>
-      {% endif %}<!--
+      <!--{% endif %}
       <div class="post-entry">
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
