@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "https://rosenrose.github.io/rosenrose2.github.io"
-baseurl: ""
+baseurl: "/rosenrose2.github.io"
 nasurl: "http://crazytempler.ipdisk.co.kr:81/publist/HDD1/Public/doujin"
 
 # If you are building a GitHub project page then use these settings:
