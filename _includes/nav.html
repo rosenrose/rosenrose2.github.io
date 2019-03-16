@@ -15,16 +15,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="{{ site.url }}/search">Full Search</a>
-        </li>
-        <li>
-          <a href="{{ site.url }}/search2">Quick Search</a>
-        </li>
-        <li>
-          <a href="{{ site.url }}/random">Random</a>
-        </li>        
+      <ul class="nav navbar-nav navbar-right">       
       {% for link in site.navbar-links %}
         {% if link[1].first %}     
           <li class="navlinks-container">
