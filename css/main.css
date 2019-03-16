@@ -334,6 +334,8 @@ footer .theme-by {
 
 .post-preview {
   padding: 20px 0;
+  width: 25%;
+  float: left;
   /*border-bottom: 1px solid #eee;*/
 }
 
