@@ -22,23 +22,23 @@ use-site-title: true
       Posted on {{ post.date | date: "%Y.%m.%d" }}
     </p>
 
-    <div class="post-entry-container">
-      <!--{% if post.image %}
+    <!--<div class="post-entry-container">
+      {% if post.image %}
       <div class="post-image">-->
         <a href="{{ post.url | prepend: site.baseurl }}">
           <span style="background-image:url({{ site.nasurl }}/{{ post.image }})" class="thumbnail-image"></span>
         </a>
-      <!--</div>-->
-      <!--{% endif %}
+      <!--</div>
+      {% endif %}
       <div class="post-entry">
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
           <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
         {% endif %}
-      </div>-->
+      </div>
     </div>
-    <!--
+    
     {% if post.tags.size > 0 %}
     <div class="blog-tags">
       Tags:
