@@ -10,7 +10,7 @@ permalink: /random/
 
   function linkToRandomBlogPost() {
     var allPosts = [{% for post in site.posts %}
-      "{{ post.url }}"{% unless post.previous == nil %},{% endunless %}
+      "{{ site.baseurl }}/{{ post.url }}"{% unless post.previous == nil %},{% endunless %}
     {% endfor %}];
 
     var i = 0;
@@ -20,10 +20,10 @@ permalink: /random/
     while (comingFromPost.includes(randomPostLink) || i > 10)
 
     if (i > 10 && comingFromPost !== '/random') {
-      randomPostLink = '{{ site.url }}/random';}
+      randomPostLink = '{{ site.baseurl }}/random';}
 
     if (i > 10 && comingFromPost === '/random') {
-      randomPostLink = '{{ site.url }}/tags'
+      randomPostLink = '{{ site.baseurl }}/tags'
     }
 
     return randomPostLink;
