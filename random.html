@@ -10,7 +10,7 @@ permalink: /random/
 
   function linkToRandomBlogPost() {
     var allPosts = [{% for post in site.posts %}
-      "{{ site.baseurl }}/{{ post.url }}"{% unless post.previous == nil %},{% endunless %}
+      "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
     {% endfor %}];
 
     var i = 0;
@@ -19,11 +19,11 @@ permalink: /random/
       i++;}
     while (comingFromPost.includes(randomPostLink) || i > 10)
 
-    if (i > 10 && comingFromPost !== '/random') {
-      randomPostLink = '{{ site.baseurl }}/random';}
+    if (i > 10 && comingFromPost !== "{{ random | prepend: site.baseurl | replace: '//', '/' }}") {
+      randomPostLink = "{{ random | prepend: site.baseurl | replace: '//', '/' }}";}
 
-    if (i > 10 && comingFromPost === '/random') {
-      randomPostLink = '{{ site.baseurl }}/tags'
+    if (i > 10 && comingFromPost === "{{ random | prepend: site.baseurl | replace: '//', '/' }}") {
+      randomPostLink = "{{ tags | prepend: site.baseurl | replace: '//', '/' }}"
     }
 
     return randomPostLink;
