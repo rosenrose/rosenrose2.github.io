@@ -23,12 +23,12 @@ use-site-title: true
     </p>
 
     <div class="post-entry-container">
-      <!--{% if post.image %}-->
-      <div class="post-image">
+      <!--{% if post.image %}
+      <div class="post-image">-->
         <a href="{{ post.url | prepend: site.baseurl }}">
           <span style="background-image:url({{ site.nasurl }}/{{ post.image }})" class="thumbnail-image"></span>
         </a>
-      </div>
+      <!--</div>-->
       <!--{% endif %}
       <div class="post-entry">
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
