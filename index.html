@@ -93,7 +93,7 @@ use-site-title: true
     <script type="text/javascript">
       function movePage() {
         var pageNum = document.getElementById("pageNumInput").value;
-        location.href("{{ site.baseurl }}/page"+pageNum)
+        location.href = "{{ site.baseurl }}/page"+pageNum
       }
     </script>
   </li>
