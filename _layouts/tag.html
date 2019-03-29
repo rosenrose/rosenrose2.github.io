@@ -13,7 +13,7 @@ layout: page
 <div id="content" class="container">
     <div id="tag-content" role="main">
         <ul id="post-list">
-            {% for post in site.posts %}
+            {% for post in paginator.posts %}
                 {% if post.tags contains page.name %}
                     {% include item.html %}
                     {% if post.image %}
@@ -29,3 +29,18 @@ layout: page
         {% include pagination.html %}
     </div>
 </div>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pager main-pager">
+  {% if paginator.previous_page %}
+  <li class="home">
+    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">&larr; 이전</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="end">
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}">다음 &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
