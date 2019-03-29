@@ -412,7 +412,12 @@ footer .theme-by {
 }
 
 .pageMover {
-  margin: auto;
+  text-align: center;
+}
+
+.pageMover input{
+  color: #404040;
+  margin: 10px 0;
 }
 
 /* --- Tags --- */
