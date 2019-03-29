@@ -1,6 +1,8 @@
 ---
 title: "여동생의 귀여움때문에 언니가 위험해"
 tags: "동인지 ころもにゅ"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_2/001.jpg"
 ---
 <div class="article">

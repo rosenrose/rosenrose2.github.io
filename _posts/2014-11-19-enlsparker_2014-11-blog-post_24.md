@@ -1,6 +1,8 @@
 ---
 title: "붉은 역사의 푸른 향신료 -스파이스-"
 tags: "동인지 rump"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_24/001.jpg"
 ---
 <div class="article">

@@ -1,6 +1,8 @@
 ---
 title: "순정가련 마이오피아"
 tags: "동인지 ヘルメットが直せません。"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_47/001.jpg"
 ---
 <div class="article">

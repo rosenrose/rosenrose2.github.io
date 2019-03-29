@@ -1,6 +1,8 @@
 ---
 title: "정글 파체씨"
 tags: "동인지 からあげ屋さん"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post/001.jpg"
 ---
 <div class="article">

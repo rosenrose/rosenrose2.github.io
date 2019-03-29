@@ -1,6 +1,8 @@
 ---
 title: "HEART"
 tags: "동인지 strange_chameleon ストカメ"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-heart/001.jpg"
 ---
 <div class="article">

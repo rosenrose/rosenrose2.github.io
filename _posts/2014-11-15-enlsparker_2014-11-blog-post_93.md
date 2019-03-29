@@ -1,6 +1,8 @@
 ---
 title: "한여름의 약점극복교실!!"
 tags: "동인지 粟米湯"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_93/001.jpg"
 ---
 <div class="article">

@@ -1,6 +1,8 @@
 ---
 title: "이바라키 카센을 괴롭히는 사람들"
 tags: "동인지 一酸化硫黄"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_7/001.png"
 ---
 <div class="article">

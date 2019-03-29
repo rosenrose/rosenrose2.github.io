@@ -1,6 +1,8 @@
 ---
 title: "My little sister"
 tags: "기타동인지 h2o"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-my-little-sister/001.png"
 ---
 <div class="article">

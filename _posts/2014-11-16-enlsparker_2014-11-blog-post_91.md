@@ -1,6 +1,8 @@
 ---
 title: "우리주인을 찾고있습니다"
 tags: "동인지 あるたな"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_91/001.jpg"
 ---
 <div class="article">

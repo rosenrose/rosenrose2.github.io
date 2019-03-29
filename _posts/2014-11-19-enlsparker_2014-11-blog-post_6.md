@@ -1,6 +1,8 @@
 ---
 title: "사쿠사쿠팬더"
 tags: "동인지 angel_type"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_6/001.png"
 ---
 <div class="article">

@@ -1,6 +1,8 @@
 ---
 title: "터무니없는 INSANAE"
 tags: "동인지 オチンチンリーチ!"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-insanae/001.jpg"
 ---
 <div class="article">

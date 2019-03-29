@@ -1,6 +1,8 @@
 ---
 title: "동방소극장 - 느저느적 느적느적。"
 tags: "동인지 わいるどらびっつ"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_73/001.jpg"
 ---
 <div class="article">

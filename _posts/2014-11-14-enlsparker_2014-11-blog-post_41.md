@@ -1,6 +1,8 @@
 ---
 title: "오토메 인트루더"
 tags: "동인지 ギロチン銀座"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_41/001.png"
 ---
 <div class="article">

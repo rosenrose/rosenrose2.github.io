@@ -256,10 +256,6 @@ search_provider: "google"
 google:
   search_engine_id: "009745835481055354123:n-gyosnz6cu"
 
-tags:
-  - jekyll
-  - pagination
-  
 future: true
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

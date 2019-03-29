@@ -1,6 +1,8 @@
 ---
 title: "마녀 다시 여행을 가다"
 tags: "동인지 カタミチキップ"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_55/001.jpg"
 ---
 <div class="article">

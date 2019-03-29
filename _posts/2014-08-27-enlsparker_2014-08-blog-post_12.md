@@ -1,6 +1,8 @@
 ---
 title: "기적소녀 사나에"
 tags: "동인지 まにまに。"
+- jekyll
+- pagination
 image: "enlsparker/2014-08-blog-post_12/001.jpg"
 ---
 <div class="article">

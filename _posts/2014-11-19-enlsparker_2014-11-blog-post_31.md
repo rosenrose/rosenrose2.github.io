@@ -1,6 +1,8 @@
 ---
 title: "순수한 달콤함은 잊지 않아"
 tags: "동인지 リレバ"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_31/001.jpg"
 ---
 <div class="article">

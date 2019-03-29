@@ -1,6 +1,8 @@
 ---
 title: "동방청첩 - 무로사키"
 tags: "동인지 青"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_69/001.jpg"
 ---
 <div class="article">

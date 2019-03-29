@@ -1,6 +1,8 @@
 ---
 title: "어서오세요 스쿠나 공주"
 tags: "동인지 薬味さらい こもりきり。 にゃんにゃんお!"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_36/001.jpg"
 ---
 <div class="article">

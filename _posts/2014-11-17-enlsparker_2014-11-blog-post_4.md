@@ -1,6 +1,8 @@
 ---
 title: "늠름하게 피는 꽃같은 그대에게"
 tags: "기타동인지 silverstone"
+- jekyll
+- pagination
 image: "enlsparker/2014-11-blog-post_4/001.jpg"
 ---
 <div class="article">
