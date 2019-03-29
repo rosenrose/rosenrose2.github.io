@@ -89,12 +89,14 @@ use-site-title: true
   </li>
   {% endif %}
 </ul>
-<input type="text" id="pageNumInput" style="color:#404040;width:40px"/>
-<input type="button" value="페이지 이동" onclick="movePage();" style="color:#404040"/>
-<script type="text/javascript">
-  function movePage() {
-    var pageNum = document.getElementById("pageNumInput").value;
-    location.href = "{{ site.baseurl }}/page"+pageNum
-  }
-</script>
+<div class="pageMover">
+  <input type="text" id="pageNumInput" style="color:#404040;width:40px"/>
+  <input type="button" value="이동" onclick="movePage();" style="color:#404040"/>
+  <script type="text/javascript">
+    function movePage() {
+      var pageNum = document.getElementById("pageNumInput").value;
+      location.href = "{{ site.baseurl }}/page"+pageNum
+    }
+  </script>
+</div>
 {% endif %}

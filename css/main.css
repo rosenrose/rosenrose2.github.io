@@ -411,6 +411,10 @@ footer .theme-by {
   }
 }
 
+.pageMover {
+  margin: auto;
+}
+
 /* --- Tags --- */
 
 .blog-tags {
