@@ -87,16 +87,14 @@ use-site-title: true
   <li class="end">
     <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}">끝 페이지 &rarr;</a>
   </li>
-  <li>
-    <input type="text" id="pageNumInput" style="color:#404040;width:40px"/>
-    <input type="button" value="페이지 이동" onclick="movePage();" style="color:#404040"/>
-    <script type="text/javascript">
-      function movePage() {
-        var pageNum = document.getElementById("pageNumInput").value;
-        location.href = "{{ site.baseurl }}/page"+pageNum
-      }
-    </script>
-  </li>
   {% endif %}
 </ul>
+<input type="text" id="pageNumInput" style="color:#404040;width:40px"/>
+<input type="button" value="페이지 이동" onclick="movePage();" style="color:#404040"/>
+<script type="text/javascript">
+  function movePage() {
+    var pageNum = document.getElementById("pageNumInput").value;
+    location.href = "{{ site.baseurl }}/page"+pageNum
+  }
+</script>
 {% endif %}
