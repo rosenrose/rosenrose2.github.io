@@ -26,7 +26,7 @@ use-site-title: true
       {% if post.image %}
         <!--<div class="post-image">-->
       <a href="{{ post.url | prepend: site.baseurl }}">
-        <span style="background-image:url({{ site.nasurl }}/{{ post.image }})" class="thumbnail-image"></span>
+        <span style="background-image:url({{ post.imgserver }}/{{ post.image }})" class="thumbnail-image"></span>
       </a>
         <!--</div>
         {% endif %}
