@@ -20,17 +20,21 @@ permalink: /randomlist/
             var indexArray = new Array();
             var count = "{{ site.posts.size }}";
             for(var i=0; i<15; i++) {
-              var random = Math.floor(Math.random() * count);
+              {% assign min = 0 %}
+              {% assign max = {{ site.posts.size }} | minus: 1 %}
+              {% assign diff = max | minus: min %}
+              {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+              var random = "{{ randomNumber }}";
               if(!(random in indexArray)) {
                 indexArray.push(random);
 
                 var li = document.createElement("li");
-                li.setAttribute("class","post-item post "+"{{ post.post_class }}");
+                li.setAttribute("class","post-item post "+"{{ site.posts[{{ randomNumber }}].post_class }}");
                 var a1 = document.createElement("a");
-                a1.setAttribute("href","{{ post.url }}");
+                a1.setAttribute("href","{{ site.posts[{{ randomNumber }}].url }}");
                 var h3 = document.createElement("h3");
                 h3.setAttribute("class","post-title");
-                h3.innerHTML = "{{ post.title }}";
+                h3.innerHTML = "{{ site.posts[{{ randomNumber }}].title }}";
                 a1.appendChild(h3);
                 li.appendChild(a1);
                 ul.appendChild(li);
@@ -38,9 +42,9 @@ permalink: /randomlist/
                 var div = document.createElement("div");
                 div.setAttribute("class","post-image");
                 var a2 = document.createElement("a");
-                a2.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
+                a2.setAttribute("href","{{ site.posts[{{ randomNumber }}].url | prepend: site.baseurl }}");
                 var img = document.createElement("img");
-                img.setAttribute("src","{{ post.image }}");
+                img.setAttribute("src","{{ site.posts[{{ randomNumber }}].image }}");
                 a2.appendChild(img);
                 div.appendChild(a2);
                 ul.appendChild(div);
