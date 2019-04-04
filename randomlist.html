@@ -1,0 +1,52 @@
+---
+title: 랜덤 리스트
+layout: page
+page_title: Random List
+permalink: /randomlist/
+---
+
+<div id="cover" class="container"
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title | default: page.name }}</h1>
+    </div>
+</div>
+
+<div id="content" class="container">
+    <div id="tag-content" role="main">
+        <ul id="post-list">
+          <script>
+            var ul = document.getElementById("post-list");
+            var indexArray = new Array();
+            var count = "{{ site.posts.size }}";
+            for(var i=0; i<15; i++) {
+              var random = Math.floor(Math.random() * count);
+              if(!(random in indexArray)) {
+                indexArray.push(random);
+
+                var li = document.createElement("li");
+                li.class = "post-item post "+"{{ post.post_class }}";
+                var a1 = document.createElement("a");
+                a1.href = "{{ post.url }}";
+                var h3 = document.createElement("h3");
+                h3.class = "post-title";
+                h3.innerHTML = "{{ post.title }}";
+                a1.appendChild(h3);
+                li.appendChild(a1);
+                ul.appendChild(li);
+
+                var div = document.createElement("div");
+                div.class = "post-image";
+                var a2 = document.createElement("a");
+                a2.href = "{{ post.url | prepend: site.baseurl }}";
+                var img = document.createElement("img");
+                img.src = "{{ post.image }}";
+                a2.appendChild(img);
+                div.appendChild(a2);
+                ul.appendChild(div);
+              }
+            }
+          </script>
+        </ul>
+    </div>
+</div>
