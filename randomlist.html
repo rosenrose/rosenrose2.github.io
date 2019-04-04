@@ -21,7 +21,7 @@ permalink: /randomlist/
             var count = "{{ site.posts.size }}";
             for(var i=0; i<15; i++) {
               {% assign min = 0 %}
-              {% assign max = {{ site.posts.size }} | minus: 1 %}
+              {% assign max = site.posts.size | minus: 1 %}
               {% assign diff = max | minus: min %}
               {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
               var random = "{{ randomNumber }}";
@@ -34,7 +34,7 @@ permalink: /randomlist/
                 a1.setAttribute("href","{{ site.posts[randomNumber].url | prepend: site.baseurl }}");
                 var h3 = document.createElement("h3");
                 h3.setAttribute("class","post-title");
-                h3.innerHTML = "{{ site.posts[{{ randomNumber }}].title }}";
+                h3.innerHTML = "{{ site.posts[randomNumber].title }}";
                 a1.appendChild(h3);
                 li.appendChild(a1);
                 ul.appendChild(li);
