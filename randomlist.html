@@ -25,14 +25,14 @@ permalink: /randomlist/
           "{{ post.title }}"{% unless post.previous == nil %},{% endunless %}
           {% endfor %}];
         var postImg = [{% for post in site.posts %}
-          "{{ post.image}}"{% unless post.previous == nil %},{% endunless %}
+          "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
           {% endfor %}];                    
         function reload() {
           var indexArray = new Array();
 
           for(var i=0; i<15; i++) {
-            var random = Math.floor(Math.random() * allPosts.length);
-            if(!(random in indexArray)) {
+            var random = Math.floor(Math.random() * postUrl.length);
+            if(!(indexArray.hasOwnProperty(random))) {
               indexArray.push(random);
 
               var li = document.createElement("li");
