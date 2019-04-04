@@ -24,8 +24,8 @@ description: "동방 동인지"
 
 # List of links in the navigation bar
 navbar-links:
-  Full Search: "search"
-  Quick Search: "search2"
+  전체 검색: "search"
+  빠른 검색: "search2"
   Random: "random"
   Tags: "tags"
   About: "aboutus"
