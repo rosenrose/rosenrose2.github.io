@@ -17,7 +17,7 @@ permalink: /randomlist/
         <ul id="post-list">
           <script>
             var ul = document.getElementById("post-list");
-            for(var i=0; i<15; i++) {
+            {% for i in (1..15) %}
               {% assign post = site.posts | sample %}
 
               var li = document.createElement("li");
@@ -40,7 +40,7 @@ permalink: /randomlist/
               a2.appendChild(img);
               div.appendChild(a2);
               ul.appendChild(div);
-            }
+            {% endfor %}
           </script>
         </ul>
     </div>
