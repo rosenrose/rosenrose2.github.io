@@ -34,6 +34,7 @@
           </li>
         {% endif %}
         {% endfor %}
+        <li><a href="" id="random">랜덤 페이지</a></li>
         <script>
           var comingFromPost = document.referrer;
           function linkToRandomBlogPost() {
@@ -57,7 +58,6 @@
           var randomLink = document.getElementById("random");
           randomLink.href = linkToRandomBlogPost();
         </script>
-        <li><a href="" id="random">랜덤 페이지</a></li>
       </ul>
     </div>
 
