@@ -29,9 +29,9 @@ permalink: /randomlist/
                 indexArray.push(random);
 
                 var li = document.createElement("li");
-                li.setAttribute("class","post-item post "+"{{ site.posts[{{ randomNumber }}].post_class }}");
+                li.setAttribute("class","post-item post ");
                 var a1 = document.createElement("a");
-                a1.setAttribute("href","{{ site.posts[{{ randomNumber }}].url }}");
+                a1.setAttribute("href","{{ site.posts[randomNumber].url | prepend: site.baseurl }}");
                 var h3 = document.createElement("h3");
                 h3.setAttribute("class","post-title");
                 h3.innerHTML = "{{ site.posts[{{ randomNumber }}].title }}";
@@ -42,9 +42,9 @@ permalink: /randomlist/
                 var div = document.createElement("div");
                 div.setAttribute("class","post-image");
                 var a2 = document.createElement("a");
-                a2.setAttribute("href","{{ site.posts[{{ randomNumber }}].url | prepend: site.baseurl }}");
+                a2.setAttribute("href","{{ site.posts[randomNumber].url | prepend: site.baseurl }}");
                 var img = document.createElement("img");
-                img.setAttribute("src","{{ site.posts[{{ randomNumber }}].image }}");
+                img.setAttribute("src","{{ site.posts[randomNumber].image }}");
                 a2.appendChild(img);
                 div.appendChild(a2);
                 ul.appendChild(div);
