@@ -9,6 +9,7 @@ permalink: /randomlist/
      {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
         <h1>{{ page.title | default: page.name }}</h1>
+        <input type="button" value="다시" onclick="reload();" />
     </div>
 </div>
 
@@ -16,31 +17,33 @@ permalink: /randomlist/
     <div id="tag-content" role="main">
         <ul id="post-list">
           <script>
-            var ul = document.getElementById("post-list");
-            {% for i in (1..15) %}
-              {% assign post = site.posts | sample %}
+            function reload() {
+              var ul = document.getElementById("post-list");
+              {% for i in (1..15) %}
+                {% assign post = site.posts | sample %}
 
-              var li = document.createElement("li");
-              li.setAttribute("class","post-item post ");
-              var a1 = document.createElement("a");
-              a1.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
-              var h3 = document.createElement("h3");
-              h3.setAttribute("class","post-title");
-              h3.innerHTML = "{{ post.title }}";
-              a1.appendChild(h3);
-              li.appendChild(a1);
-              ul.appendChild(li);
+                var li = document.createElement("li");
+                li.setAttribute("class","post-item post ");
+                var a1 = document.createElement("a");
+                a1.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
+                var h3 = document.createElement("h3");
+                h3.setAttribute("class","post-title");
+                h3.innerHTML = "{{ post.title }}";
+                a1.appendChild(h3);
+                li.appendChild(a1);
+                ul.appendChild(li);
 
-              var div = document.createElement("div");
-              div.setAttribute("class","post-image");
-              var a2 = document.createElement("a");
-              a2.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
-              var img = document.createElement("img");
-              img.setAttribute("src","{{ post.image }}");
-              a2.appendChild(img);
-              div.appendChild(a2);
-              ul.appendChild(div);
-            {% endfor %}
+                var div = document.createElement("div");
+                div.setAttribute("class","post-image");
+                var a2 = document.createElement("a");
+                a2.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
+                var img = document.createElement("img");
+                img.setAttribute("src","{{ post.image }}");
+                a2.appendChild(img);
+                div.appendChild(a2);
+                ul.appendChild(div);
+              {% endfor %}
+            }
           </script>
         </ul>
     </div>
