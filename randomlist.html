@@ -17,38 +17,29 @@ permalink: /randomlist/
         <ul id="post-list">
           <script>
             var ul = document.getElementById("post-list");
-            var indexArray = new Array();
-            var count = "{{ site.posts.size }}";
             for(var i=0; i<15; i++) {
-              {% assign min = 0 %}
-              {% assign max = site.posts.size | minus: 1 %}
-              {% assign diff = max | minus: min %}
-              {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
-              var random = "{{ randomNumber }}";
-              if(!(random in indexArray)) {
-                indexArray.push(random);
+              {% assign post = site.posts | sample %}
 
-                var li = document.createElement("li");
-                li.setAttribute("class","post-item post ");
-                var a1 = document.createElement("a");
-                a1.setAttribute("href","{{ site.posts[randomNumber].url | prepend: site.baseurl }}");
-                var h3 = document.createElement("h3");
-                h3.setAttribute("class","post-title");
-                h3.innerHTML = "{{ site.posts[randomNumber].title }}";
-                a1.appendChild(h3);
-                li.appendChild(a1);
-                ul.appendChild(li);
+              var li = document.createElement("li");
+              li.setAttribute("class","post-item post ");
+              var a1 = document.createElement("a");
+              a1.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
+              var h3 = document.createElement("h3");
+              h3.setAttribute("class","post-title");
+              h3.innerHTML = "{{ post.title }}";
+              a1.appendChild(h3);
+              li.appendChild(a1);
+              ul.appendChild(li);
 
-                var div = document.createElement("div");
-                div.setAttribute("class","post-image");
-                var a2 = document.createElement("a");
-                a2.setAttribute("href","{{ site.posts[randomNumber].url | prepend: site.baseurl }}");
-                var img = document.createElement("img");
-                img.setAttribute("src","{{ site.posts[randomNumber].image }}");
-                a2.appendChild(img);
-                div.appendChild(a2);
-                ul.appendChild(div);
-              }
+              var div = document.createElement("div");
+              div.setAttribute("class","post-image");
+              var a2 = document.createElement("a");
+              a2.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
+              var img = document.createElement("img");
+              img.setAttribute("src","{{ post.image }}");
+              a2.appendChild(img);
+              div.appendChild(a2);
+              ul.appendChild(div);
             }
           </script>
         </ul>
