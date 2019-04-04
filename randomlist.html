@@ -6,60 +6,83 @@ permalink: /randomlist/
 ---
 
 <div id="cover" class="container"
-  {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
-  <div>
-      <h1>{{ page.title | default: page.name }}</h1>
-      <input type="button" value="다시" onclick="reload();" style="color:#404040;" />
-  </div>
+    {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title | default: page.name }}</h1>
+        <input type="button" value="다시" onclick="reload();" style="color:#404040;" />
+    </div>
 </div>
 
 <div id="content" class="container">
-  <div id="tag-content" role="main">
-    <ul id="post-list">
-      <script>
-        var ul = document.getElementById("post-list");
-        var postUrl = [{% for post in site.posts %}
-          "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
-          {% endfor %}];
-        var postTitle = [{% for post in site.posts %}
-          "{{ post.title }}"{% unless post.previous == nil %},{% endunless %}
-          {% endfor %}];
-        var postImg = [{% for post in site.posts %}
-          "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
-          {% endfor %}];                    
-        function reload() {
-          var indexArray = new Array();
+    <div id="tag-content" role="main">
+        <ul id="post-list">
+            <script>
+                var ul = document.getElementById("post-list");
+                var postUrl = [{% for post in site.posts %}
+                    "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
+                    {% endfor %}];
+                var postTitle = [{% for post in site.posts %}
+                    "{{ post.title }}"{% unless post.previous == nil %},{% endunless %}
+                    {% endfor %}];
+                var postImg = [{% for post in site.posts %}
+                    "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
+                    {% endfor %}];
+                var count = 15;
 
-          for(var i=0; i<15; i++) {
-            var random = Math.floor(Math.random() * postUrl.length);
-            if(!(indexArray.hasOwnProperty(random))) {
-              indexArray.push(random);
+                for(var i=0; i<count; i++) {
+                    var li = document.createElement("li");
+                    li.setAttribute("class","post-item post ");
+                    var a1 = document.createElement("a");
+                    a1.setAttribute("href","");
+                    a1.setAttribute("class","link1");
+                    var h3 = document.createElement("h3");
+                    h3.setAttribute("class","post-title");
+                    h3.innerHTML = "";
+                    a1.appendChild(h3);
+                    li.appendChild(a1);
+                    ul.appendChild(li);
 
-              var li = document.createElement("li");
-              li.setAttribute("class","post-item post ");
-              var a1 = document.createElement("a");
-              a1.setAttribute("href",postUrl[random]);
-              var h3 = document.createElement("h3");
-              h3.setAttribute("class","post-title");
-              h3.innerHTML = postTitle[random];
-              a1.appendChild(h3);
-              li.appendChild(a1);
-              ul.appendChild(li);
+                    var div = document.createElement("div");
+                    div.setAttribute("class","post-image");
+                    var a2 = document.createElement("a");
+                    a2.setAttribute("href","");
+                    a2.setAttribute("class","link2");
+                    var img = document.createElement("img");
+                    img.setAttribute("src","");
+                    img.setAttribute("class","image");
+                    a2.appendChild(img);
+                    div.appendChild(a2);
+                    ul.appendChild(div);
+                }
 
-              var div = document.createElement("div");
-              div.setAttribute("class","post-image");
-              var a2 = document.createElement("a");
-              a2.setAttribute("href",postUrl[random]);
-              var img = document.createElement("img");
-              img.setAttribute("src",postImg[random]);
-              a2.appendChild(img);
-              div.appendChild(a2);
-              ul.appendChild(div);
-            }
-          }
-        }
-        reload();
-      </script>
-    </ul>
-  </div>
+                function reload() {
+                    var indexArray = new Array();
+                    for(var i=0; i<count; i++) {
+                        var random = Math.floor(Math.random() * postUrl.length);
+                        if(!(indexArray.hasOwnProperty(random))) {
+                            indexArray.push(random);
+
+                            a1 = document.getElementsByClassName("link1");
+                            for(var j=0; j<a1.length; j++) {
+                                a1[j].href = postUrl[random];
+                            }
+                            h3 = document.getElementsByClassName("post-title");
+                            for(var j=0; j<h3.length; j++) {
+                                h3[j].innerHTML = postTitle[random];
+                            }                            
+                            a2 = document.getElementsByClassName("link2");
+                            for(var j=0; j<a2.length; j++) {
+                                a2[j].href = postUrl[random];
+                            }
+                            img = document.getElementsByClassName("image");
+                            for(var j=0; j<img.length; j++) {
+                                img[j].src = postImg[random];
+                            }                            
+                        }
+                    }
+                }
+                reload();
+            </script>
+        </ul>
+    </div>
 </div>
