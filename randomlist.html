@@ -62,22 +62,10 @@ permalink: /randomlist/
                         if(!(indexArray.hasOwnProperty(random))) {
                             indexArray.push(random);
 
-                            a1 = document.getElementsByClassName("link1");
-                            for(var j=0; j<a1.length; j++) {
-                                a1[j].href = postUrl[random];
-                            }
-                            h3 = document.getElementsByClassName("post-title");
-                            for(var j=0; j<h3.length; j++) {
-                                h3[j].innerHTML = postTitle[random];
-                            }                            
-                            a2 = document.getElementsByClassName("link2");
-                            for(var j=0; j<a2.length; j++) {
-                                a2[j].href = postUrl[random];
-                            }
-                            img = document.getElementsByClassName("image");
-                            for(var j=0; j<img.length; j++) {
-                                img[j].src = postImg[random];
-                            }                            
+                            document.getElementsByClassName("link1")[i].href = postUrl[random];
+                            document.getElementsByClassName("post-title")[i].innerHTML = postTitle[random];
+                            document.getElementsByClassName("link2")[i].href = postUrl[random];
+                            document.getElementsByClassName("image")[i].src = postImg[random];
                         }
                     }
                 }
