@@ -6,45 +6,60 @@ permalink: /randomlist/
 ---
 
 <div id="cover" class="container"
-     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
-    <div>
-        <h1>{{ page.title | default: page.name }}</h1>
-        <input type="button" value="다시" onclick="reload();" />
-    </div>
+  {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+  <div>
+      <h1>{{ page.title | default: page.name }}</h1>
+      <input type="button" value="다시" onclick="reload();" style="color:#404040;" />
+  </div>
 </div>
 
 <div id="content" class="container">
-    <div id="tag-content" role="main">
-        <ul id="post-list">
-          <script>
-            function reload() {
-              var ul = document.getElementById("post-list");
-              {% for i in (1..15) %}
-                {% assign post = site.posts | sample %}
+  <div id="tag-content" role="main">
+    <ul id="post-list">
+      <script>
+        var ul = document.getElementById("post-list");
+        var postUrl = [{% for post in site.posts %}
+          "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
+          {% endfor %}];
+        var postTitle = [{% for post in site.posts %}
+          "{{ post.title }}"{% unless post.previous == nil %},{% endunless %}
+          {% endfor %}];
+        var postImg = [{% for post in site.posts %}
+          "{{ post.image}}"{% unless post.previous == nil %},{% endunless %}
+          {% endfor %}];                    
+        function reload() {
+          var indexArray = new Array();
 
-                var li = document.createElement("li");
-                li.setAttribute("class","post-item post ");
-                var a1 = document.createElement("a");
-                a1.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
-                var h3 = document.createElement("h3");
-                h3.setAttribute("class","post-title");
-                h3.innerHTML = "{{ post.title }}";
-                a1.appendChild(h3);
-                li.appendChild(a1);
-                ul.appendChild(li);
+          for(var i=0; i<15; i++) {
+            var random = Math.floor(Math.random() * allPosts.length);
+            if(!(random in indexArray)) {
+              indexArray.push(random);
 
-                var div = document.createElement("div");
-                div.setAttribute("class","post-image");
-                var a2 = document.createElement("a");
-                a2.setAttribute("href","{{ post.url | prepend: site.baseurl }}");
-                var img = document.createElement("img");
-                img.setAttribute("src","{{ post.image }}");
-                a2.appendChild(img);
-                div.appendChild(a2);
-                ul.appendChild(div);
-              {% endfor %}
+              var li = document.createElement("li");
+              li.setAttribute("class","post-item post ");
+              var a1 = document.createElement("a");
+              a1.setAttribute("href",postUrl[random]);
+              var h3 = document.createElement("h3");
+              h3.setAttribute("class","post-title");
+              h3.innerHTML = postTitle[random];
+              a1.appendChild(h3);
+              li.appendChild(a1);
+              ul.appendChild(li);
+
+              var div = document.createElement("div");
+              div.setAttribute("class","post-image");
+              var a2 = document.createElement("a");
+              a2.setAttribute("href",postUrl[random]);
+              var img = document.createElement("img");
+              img.setAttribute("src",postImg[random]);
+              a2.appendChild(img);
+              div.appendChild(a2);
+              ul.appendChild(div);
             }
-          </script>
-        </ul>
-    </div>
+          }
+        }
+        reload();
+      </script>
+    </ul>
+  </div>
 </div>
