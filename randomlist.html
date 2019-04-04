@@ -57,16 +57,18 @@ permalink: /randomlist/
 
                 function reload() {
                     var indexArray = new Array();
-                    for(var i=0; i<count; i++) {
-                        var random = Math.floor(Math.random() * postUrl.length);
-                        if(!(indexArray.hasOwnProperty(random))) {
-                            indexArray.push(random);
 
-                            document.getElementsByClassName("link1")[i].href = postUrl[random];
-                            document.getElementsByClassName("post-title")[i].innerHTML = postTitle[random];
-                            document.getElementsByClassName("link2")[i].href = postUrl[random];
-                            document.getElementsByClassName("image")[i].src = postImg[random];
+                    for(var i=0; i<count; ) {
+                        var random = Math.floor(Math.random() * postUrl.length);
+                        if(indexArray.hasOwnProperty(random)) {
+                            continue
                         }
+                        indexArray.push(random)
+                        document.getElementsByClassName("link1")[i].href = postUrl[random];
+                        document.getElementsByClassName("post-title")[i].innerHTML = postTitle[random];
+                        document.getElementsByClassName("link2")[i].href = postUrl[random];
+                        document.getElementsByClassName("image")[i].src = postImg[random];
+                        i++;                            
                     }
                 }
                 reload();
