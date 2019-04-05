@@ -18,6 +18,9 @@ permalink: /randomlist/
         <ul id="post-list">
             <script>
                 var ul = document.getElementById("post-list");
+                var postArray = [{% for post in site.posts %}
+                    "{{ post }}"{% unless post.previous == nil %},{% endunless %}
+                    {% endfor %}];
                 var postUrl = [{% for post in site.posts %}
                     "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
                     {% endfor %}];
