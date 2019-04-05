@@ -34,7 +34,7 @@ permalink: /randomlist/
                     "{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"{% unless post.previous == nil %},{% endunless %}
                     {% endfor %}];
                 var postTitle = [{% for post in site.posts %}
-                    "{{ post.title }}"{% unless post.previous == nil %},{% endunless %}
+                    "{{ post.title | escape }}"{% unless post.previous == nil %},{% endunless %}
                     {% endfor %}];
                 var postImg = [{% for post in site.posts %}
                     "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
