@@ -8,14 +8,6 @@ permalink: /randomlist/
 <div id="cover" class="container"
     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
-        <h1 style="display:inline;">랜덤 태그: </h1>
-        <h1 style="display:inline;">
-            <a href="" id="tagLink"></a>
-        </h1>
-        <script type="text/javascript">
-            
-        </script>
-        <br/><br/>
         <h1 style="display:inline;">{{ page.title | default: page.name }}</h1>
         <input type="button" value="다시" onclick="reload();" style="color:#404040;display:inline;margin:0px 15px;" />
     </div>
@@ -36,9 +28,6 @@ permalink: /randomlist/
                     "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
                     {% endfor %}];
                 var count = 15;
-                var allTags = [{% for tag in site.tags %}"{{ tag.name | escape }}",{% endfor %}""];
-                allTags.pop();
-                var tag = document.getElementById("tagLink");
 
                 for(var i=0; i<count; i++) {
                     var li = document.createElement("li");
@@ -81,9 +70,6 @@ permalink: /randomlist/
                         document.getElementsByClassName("image")[i].src = postImg[random];
                         i++;                            
                     }
-                    var random = Math.floor(Math.random() * allTags.length);
-                    tag.href = "{{ site.baseurl }}/tags/"+allTags[random];
-                    tag.innerHTML = allTags[random];
                 }
                 reload();
             </script>
