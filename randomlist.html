@@ -13,11 +13,7 @@ permalink: /randomlist/
             <a href="" id="tagLink"></a>
         </h1>
         <script type="text/javascript">
-            var allTags = [{% for tag in site.tags %}"{{ tag.name | escape }}",{% endfor %}""];
-            var random = Math.floor(Math.random() * (allTags.length)-1);
-            var tag = document.getElementById("tagLink");
-            tag.href = "{{ site.baseurl }}/tags/"+allTags[random];
-            tag.innerHTML = allTags[random];
+            
         </script>
         <br/><br/>
         <h1 style="display:inline;">{{ page.title | default: page.name }}</h1>
@@ -40,6 +36,9 @@ permalink: /randomlist/
                     "{{ post.image }}"{% unless post.previous == nil %},{% endunless %}
                     {% endfor %}];
                 var count = 15;
+                var allTags = [{% for tag in site.tags %}"{{ tag.name | escape }}",{% endfor %}""];
+                allTags.pop();
+                var tag = document.getElementById("tagLink");
 
                 for(var i=0; i<count; i++) {
                     var li = document.createElement("li");
@@ -82,6 +81,9 @@ permalink: /randomlist/
                         document.getElementsByClassName("image")[i].src = postImg[random];
                         i++;                            
                     }
+                    var random = Math.floor(Math.random() * allTags.length);
+                    tag.href = "{{ site.baseurl }}/tags/"+allTags[random];
+                    tag.innerHTML = allTags[random];
                 }
                 reload();
             </script>
